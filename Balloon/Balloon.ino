@@ -106,7 +106,8 @@ void initialize_radio()
   bool join_result = false;
   
   //ABP: initABP(String addr, String AppSKey, String NwkSKey);
-  join_result = myLora.initABP("???", "???", "???");
+  #include keys.h;
+  join_result = myLora.initABP(addr, AppSKey, NwkSKey);
   
   //OTAA: initOTAA(String AppEUI, String AppKey);
   //join_result = myLora.initOTAA("???", "???");
