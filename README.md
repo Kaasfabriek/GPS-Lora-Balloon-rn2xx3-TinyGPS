@@ -11,8 +11,13 @@ Connect the RN2xx3 as follows:
 Connect the GPS on ports 0 and 1 (HardwareSerial)
 Cross the Rx and Tx 
 
-Change the Device address, App and Networkkey
-
+Change the Device address, App and Networkkey 
+To do this create a file keys.h 
+In keys.h you write: (with your own keys ofcourse)
+String addr = "AAAAAAAA";
+String AppSKey = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+String NwkSKey = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+-----------------------------------------
 Libraries required:
 TinyGPS:
 https://github.com/mikalhart/TinyGPS
