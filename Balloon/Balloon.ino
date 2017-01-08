@@ -1,7 +1,10 @@
 /*
- * Author: JP Meijers
- * Date: 2016-02-07
- * Previous filename: TTN-Mapper-TTNEnschede-V1
+ * Author: JP Meijers  >> DenniZr
+ * Date: januari 2017: customized by DenniZr for Kaasfabriek, Junior Internet of Things Balloon project
+ *     code adjusted to comply with TTN Mapper
+ *     some formatting adjustmets
+ *     TODO move private info to separate file to prevent upload to GITHUB
+ * Date: 2016-02-07   * Previous filename: TTN-Mapper-TTNEnschede-V1
  * 
  * This program is meant to be used with an Arduino UNO or NANO, conencted to an RNxx3 radio module.
  * It will most likely also work on other compatible Arduino or Arduino compatible boards, like The Things Uno, but might need some slight modifications.
@@ -27,7 +30,7 @@
  * Gnd -- Gnd
  * 
  * If you use an Arduino with a free hardware serial port, you can replace 
- * the line "rn2xx3 myLora(mySerial);"
+ * the line "rn2xx3 myLora(mySerialLora);"
  * with     "rn2xx3 myLora(SerialX);"
  * where the parameter is the serial port the RN2xx3 is connected to.
  * Remember that the serial port should be initialised before calling initTTN().
@@ -35,15 +38,15 @@
  * If you use 57600 baud, you can remove the line "myLora.autobaud();".
  * 
  */
-#include <rn2xx3.h>
-#include <SoftwareSerial.h>
-#include <TinyGPS.h>
+#include <rn2xx3.h>           // used for sending commands to the LoRa radio module types RN2xx3 and also ...
+#include <SoftwareSerial.h>   // req'd for reading from the standard GPS module
+#include <TinyGPS.h>          // req'd for decoding the standard GPS information
 
-SoftwareSerial mySerial(11, 12); // RX, TX
+SoftwareSerial mySerialLora(11, 12); // RX, TX
 
 //create an instance of the rn2xx3 library, 
 //giving the software serial as port to use
-rn2xx3 myLora(mySerial);
+rn2xx3 myLora(mySerialLora);
 
 
 HardwareSerial &ss = Serial;
@@ -59,7 +62,7 @@ void setup()
   
   // Open serial communications and wait for port to open:
   
-  mySerial.begin(9600); //serial port to radio
+  mySerialLora.begin(9600); //serial port to radio
   //Serial.println("Startup");
 
   initialize_radio();
@@ -80,7 +83,7 @@ void initialize_radio()
   digitalWrite(10, HIGH);
 
   delay(100); //wait for the RN2xx3's startup message
-  mySerial.flush();
+  mySerialLora.flush();
 
   //Autobaud the rn2483 module to 9600. The default would otherwise be 57600.
   myLora.autobaud();
