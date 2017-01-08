@@ -1,10 +1,9 @@
 /*
- * Author: JP Meijers  >> DenniZr
- * Date: januari 2017: customized by DenniZr for Kaasfabriek, Junior Internet of Things Balloon project
+ * Author:  DenniZr  Date:  januari 2017: customized by DenniZr for Kaasfabriek, Junior Internet of Things Balloon project
  *     code adjusted to comply with TTN Mapper
  *     some formatting adjustmets
  *     TODO move private info to separate file to prevent upload to GITHUB
- * Date: 2016-02-07   * Previous filename: TTN-Mapper-TTNEnschede-V1
+ * Author JP Meijers  Date:  2016-02-07   * Previous filename: TTN-Mapper-TTNEnschede-V1
  * 
  * This program is meant to be used with an Arduino UNO or NANO, conencted to an RNxx3 radio module.
  * It will most likely also work on other compatible Arduino or Arduino compatible boards, like The Things Uno, but might need some slight modifications.
