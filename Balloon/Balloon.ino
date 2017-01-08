@@ -38,9 +38,9 @@
  * If you use 57600 baud, you can remove the line "myLora.autobaud();".
  * 
  */
-#include <rn2xx3.h>           // used for sending commands to the LoRa radio module types RN2xx3 and also ...
-#include <SoftwareSerial.h>   // req'd for reading from the standard GPS module
-#include <TinyGPS.h>          // req'd for decoding the standard GPS information
+#include <rn2xx3.h>           // RN2483 Arduino Library: https://github.com/jpmeijers/RN2483-Arduino-Library   // used for sending commands to the LoRa radio module types RN2xx3 and also ...
+#include <SoftwareSerial.h>   // req'd for reading from the standard GPS module if connected to software serial (this allows reprogrammming trough HW serial)
+#include <TinyGPS.h>          // TinyGPS: https://github.com/mikalhart/TinyGPS    // req'd for decoding the standard GPS information
 
 SoftwareSerial mySerialLora(11, 12); // RX, TX
 
