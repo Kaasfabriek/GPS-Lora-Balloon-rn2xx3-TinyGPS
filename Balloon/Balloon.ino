@@ -38,6 +38,7 @@
 #include <rn2xx3.h>
 #include <SoftwareSerial.h>
 #include <TinyGPS.h>
+#include "keys.h"
 
 SoftwareSerial mySerial(11, 12); // RX, TX
 
@@ -106,7 +107,7 @@ void initialize_radio()
   bool join_result = false;
   
   //ABP: initABP(String addr, String AppSKey, String NwkSKey);
-  #include keys.h;
+  
   join_result = myLora.initABP(addr, AppSKey, NwkSKey);
   
   //OTAA: initOTAA(String AppEUI, String AppKey);
