@@ -19,6 +19,7 @@ String addr = "AAAAAAAA";<br/>
 String AppSKey = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";<br/>
 String NwkSKey = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";<br/>
 <br/>
+Rename the keys.h.example to keys.h<br/>
 Libraries required:<br/>
 TinyGPS:<br/>
 https://github.com/mikalhart/TinyGPS<br/>

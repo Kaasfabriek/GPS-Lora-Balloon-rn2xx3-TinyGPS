@@ -40,7 +40,7 @@
 #include <rn2xx3.h>           // RN2483 Arduino Library: https://github.com/jpmeijers/RN2483-Arduino-Library   // used for sending commands to the LoRa radio module types RN2xx3 and also ...
 #include <SoftwareSerial.h>   // req'd for reading from the standard GPS module if connected to software serial (this allows reprogrammming trough HW serial)
 #include <TinyGPS.h>          // TinyGPS: https://github.com/mikalhart/TinyGPS    // req'd for decoding the standard GPS information
-
+#include "keys.h"
 
 SoftwareSerial mySerialLora(11, 12); // RX, TX
 
@@ -143,7 +143,7 @@ void loop()
     {
       while (ss.available())
         gps.encode(ss.read());
-    } while (millis() - start < 2000);
+    } while (millis() - start < (unsigned long)4000);
     
     
     
